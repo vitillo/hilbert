@@ -75,7 +75,7 @@ LTurtle.prototype = {
     var matrix = new THREE.Matrix4().makeRotationFromQuaternion(this.orientation);
     var forward = new THREE.Vector3(0, 0, this.length).applyMatrix4(matrix);
     var top = this.position.add(forward);
-    this.capsuleFactory.create(1, bottom, top);
+    this.capsuleFactory.create(1, bottom, top, false, !last);
 
     if(this.position.x < this.minCoords.x)
       this.minCoords.x = this.position.x;
